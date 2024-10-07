@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# Task Manager App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple task management app built using **React** and **Lucide React Icons**. It allows users to create, edit, complete, and delete tasks. Task data is persisted in the browser's localStorage, so tasks remain available across page refreshes.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Add Task**: Add a new task with a title and description.
+- **Edit Task**: Edit the title and description of an existing task.
+- **Complete Task**: Mark a task as complete, with a visual indication (strikethrough).
+- **Delete Task**: Remove a task from the list.
+- **Filter Tasks**: Filter tasks by "All", "Completed", or "Pending".
+- **Persist Tasks**: Tasks are saved in **localStorage** and persist across page refreshes.
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: Frontend library for building the user interface.
+- **Lucide React Icons**: Icon library for modern, lightweight icons in React.
+- **Local Storage**: Used to store tasks locally and persist them across page refreshes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup Instructions
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ensure you have the following installed:
 
-### `npm run build`
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) (usually comes with Node.js) or [yarn](https://yarnpkg.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   git clone https://github.com/yourusername/task-manager-app.git
+   cd task-manager-app
+   ```
 
-### `npm run eject`
+2. **Install dependencies**:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   If you use `npm`:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   If you use `yarn`:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   yarn install
+   ```
 
-## Learn More
+### Running the App Locally
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To run the app locally, use the following command:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
+or with yarn:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+yarn start
+```
 
-### Analyzing the Bundle Size
+This will start the development server. Open your browser and navigate to:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+http://localhost:3000
+```
 
-### Making a Progressive Web App
+### Build for Production
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To build the app for production:
 
-### Advanced Configuration
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+or with yarn:
 
-### Deployment
+```bash
+yarn build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This will create an optimized version of the app in the `build` folder.
 
-### `npm run build` fails to minify
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Here's an overview of the project's structure:
+
+```
+src/
+│
+├── components/
+│   ├── TaskForm.js       # Form component to add/edit tasks
+│   ├── TaskItem.js       # Component to display individual tasks
+││
+├── App.js                # Main component that handles task state and logic
+├── index.js              # Entry point that renders the App component
+├── App.css
+```
+
+### Key Files
+
+- **App.js**: The main component responsible for handling the state of the tasks and managing the task list. It uses React's `useState` and `useEffect` to manage tasks and persist them using `localStorage`. and filters tasks by status (All, Completed, or Pending).
+- **TaskForm.js**: A form to handle creating or editing tasks.
+- **TaskItem.js**: Component that displays individual tasks with options to edit, delete, or mark as complete.
+
+### Components
+
+- **TaskForm**: Handles task creation and editing.
+- **TaskItem**: Displays individual tasks with action buttons for edit, delete, and toggle completion.
+
+## Local Storage
+
+TThe app uses the browser's `localStorage` to persist tasks. When tasks are added, edited, completed, or deleted, the updated task list is saved to `localStorage`. On page load, the tasks are retrieved from `localStorage` to ensure persistence across refreshes
+
+## Future Enhancements
+
+Here are some optional improvements that can be made:
+
+- **Task Filtering**: Add filters to show completed, pending, or all tasks.
+- **Form Validation**: Add form validation to ensure that a task title and description are provided before submitting..
+- **Due Dates**: Add the ability to assign due dates to tasks and sort them accordingly.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
